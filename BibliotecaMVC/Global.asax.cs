@@ -1,5 +1,7 @@
-﻿using System;
+﻿using BibliotecaMVC.DAL;
+using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -13,6 +15,10 @@ namespace BibliotecaMVC
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+
+            var bookContext = new BookContext();
+            Database.SetInitializer(new BookInitializer());
+            bookContext.Database.Initialize(true);
         }
     }
 }
