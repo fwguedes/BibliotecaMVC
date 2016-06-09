@@ -52,9 +52,11 @@
          Synopsis = "...",
          Title = "Rapid Application Development With CakePHP"
          }
-         };
+         };
+
                     books.ForEach(b => context.Books.Add(b));
-                    context.SaveChanges();            
+                    context.SaveChanges();
+            
                 }
             }
         }
